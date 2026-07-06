@@ -6,7 +6,7 @@ body,
 }
 
 li {
-  font-size: 24px;
+  font-size: 20px;
 }
 
 #root {
@@ -38,4 +38,8 @@ li {
     border-radius: 15px;
     font-weight: 500;
     cursor: pointer;
+}
+
+p {
+  font-size: 20px;
 }

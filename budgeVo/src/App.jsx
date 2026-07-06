@@ -10,6 +10,7 @@ function App() {
   return (
     <>
       <NavBar />
+      {/* Hero Section */}
       <div className='hero-section'>
         <div className='hero-section-heading'>
             <h1>Take Control Of <br /> <span>Your Money.</span> <br /> Build a Better Future.</h1>
@@ -23,6 +24,34 @@ function App() {
         <div className='hero-section-image'>
           <img src='/home-page-phone.png' />
         </div>
+      </div>
+
+      {/* Befenits Section */}
+      <div className='benefits-section'>
+        <div className='benefits-info-box breathing'>
+          <div className='circle'></div>
+          <div>
+            <h2>Expense Insights</h2>
+            <p>Add income and expenses instantly.</p>
+          </div>
+        </div>
+
+        <div className='benefits-info-box breathing'>
+          <div className='circle'></div>
+          <div>
+            <h2>Predictive Goals</h2>
+            <p>See months needed to save.</p>
+          </div>
+        </div>
+
+        <div className='benefits-info-box breathing'>
+          <div className='circle'></div>
+          <div>
+            <h2>Financial Dashboard</h2>
+            <p>View reports and spot trends.</p>
+          </div>
+        </div>
+
       </div>
     </>
   )
