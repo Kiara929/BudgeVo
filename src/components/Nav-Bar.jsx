@@ -11,7 +11,10 @@ function NavBar() {
                 <div className="nav-bar-container">
                     <nav className="nav-bar">
                         <div className="nav-bar-image">
-                            <img src="/BudgeVo-Logo.png" alt="BudgeVo Logo" />
+                            <a href="/index.html" >
+                                 <img src="/BudgeVo-Logo.png" alt="BudgeVo Logo" className="home-logo"/>
+                            </a>
+                           
                         </div>
 
                         {/* Hamburger Icon */}
@@ -23,14 +26,16 @@ function NavBar() {
                         />
 
                         {/* Hamburger Menu */}
-                        {menuOpen && (
-                            <div className="nav-links-container">
+                       
+                            <aside className={`nav-links-container ${menuOpen ? "open" : ""}`}>
                                 <div className="hamburger-icons">
-                                    <img
+                                    <a href="/" >
+                                        <img
                                         src="/BudgeVo-Logo.png"
                                         className="hamburger-logo"
                                         alt="BudgeVo Logo"
                                     />
+                                    </a>
 
                                     <img
                                         src="/reject.png"
@@ -70,15 +75,17 @@ function NavBar() {
                                 <hr className="hamburger-menu-divider" />
 
                                 <div className="Log-In-Sign-In-mobile">
-                                    <li>
+                                    <ul>
+                                        <li>
                                         <img src="/user.png" className="nav-links-icons" alt="" />
                                         <a href="">Log In</a>
                                     </li>
+                                    </ul>
+                                    
 
                                     <button>Get Started</button>
                                 </div>
-                            </div>
-                        )}
+                            </aside>
                     </nav>
                 </div>
             ) : (
