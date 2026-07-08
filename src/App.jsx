@@ -6,6 +6,7 @@ import './App.css'
 import NavBar from './components/Nav-Bar'
 
 function App() {
+const isMobile = window.innerWidth <= 768;
 
   return (
     <>
@@ -14,7 +15,7 @@ function App() {
       <div className='hero-section'>
         <div className='hero-section-heading'>
             <h1>Take Control Of <br /> <span>Your Money.</span> <br /> Build a Better Future.</h1>
-            <p>Budgevo helps you track expenses, set goals, and  <br />grow your savings - all in one place.</p>
+            <p>Budgevo helps you track expenses, set goals, and grow your savings - all in one place.</p>
             <br />
             <div className='hero-buttons-container'>
               <button>Start Saving Today</button> 
