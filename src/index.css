@@ -3,13 +3,14 @@ body,
 #root {
     margin: 0;
     padding: 0;
+    /* width: 100% !important; */
 }
 
 li {
-  font-size: 20px;
+  font-size: 15px;
 }
 
-#root {
+body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   background: linear-gradient(
         to right,
@@ -20,7 +21,7 @@ li {
         #eef6e8 100%
     );
     
-    
+    /* width: 100% !important; */
     /* height: 100%; */
   }
 
@@ -42,4 +43,10 @@ li {
 
 p {
   font-size: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
