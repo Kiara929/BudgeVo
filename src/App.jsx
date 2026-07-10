@@ -58,7 +58,53 @@ const isMobile = window.innerWidth <= 768;
             <p>View reports and spot trends.</p>
           </div>
         </div>
+      </div>
 
+      {/* Get Started Section */}
+
+      <div className='get-started-section'>
+        <div className='get-started-image'>
+          <img src='/PC-image.png'/>
+          <div className='get-started-circle' />
+
+         
+            <div
+            className="circle-grid"
+            style={{
+                gridTemplateColumns: `repeat(${7}, 1fr)`,
+                gridTemplateRows: `repeat(${6}, 1fr)`
+            }}
+        >
+            {Array.from({ length: 42 }).map((_, i) => (
+                <div key={i} className="get-started-circles" ></div>
+            ))}
+        </div>
+       
+        </div>
+
+        <div className='get-started-heading'>
+          <h1>Manage Your Money with <span>Confidence</span></h1>
+          <div className='get-started-line' />
+          <p>Track your income, expenses, and savings in one beautiful dashboard. Gain better financial insights, make smarter decisions, and stay on track toward your goals with ease.</p>
+          <button>Get Started ➜</button>
+        </div>
+      </div>
+
+      {/* INSTRUCTIONS SECTION */}
+
+      <div className='instructions-section'>
+        <div className='instructions-container'>
+          <div className='instructions-number'>
+            <div className='circle'>1</div>
+          </div>
+          <div className='instructions-heading'>
+            <h2>Log Your Financial Data</h2>
+          <p>Add your income sources and dates. Track expenses and mark them as short-term or long-term.</p>
+          </div>
+          <div className='circle instructions-icon'>
+            <img src='wallet.png' className='image-icons wallet'/>
+          </div>
+        </div>
       </div>
     </>
   )

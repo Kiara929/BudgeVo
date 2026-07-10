@@ -197,6 +197,220 @@ button {
   height: 55px;
 }
 
+/* GET STARTED SECTION */
+
+.get-started-image img {
+  width: 85%;
+  z-index: 3;
+    /* filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.25)); */
+}
+
+.get-started-image::after {
+    content: "";
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    width: 60%;
+    height: 24px;
+    transform: translateX(-50%);
+    background: radial-gradient(
+        ellipse at center,
+        rgba(0, 0, 0, 0.35) 0%,
+        rgba(0, 0, 0, 0.18) 40%,
+        rgba(0, 0, 0, 0) 75%
+    );
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.circle-grid {
+    position: absolute;
+    top: -15px; /* adjust to taste */
+    left: 50px;
+    z-index: 2;
+    display: grid;
+    gap: 10px;
+    /* width: 100%; */
+}
+
+.get-started-circles {
+    aspect-ratio: 1 / 1;
+    border-radius: 100%;
+    background: #1656105b;
+    width: 100%;
+    min-width: 5px;
+    min-height: 5px;
+    max-width: 20px;
+    max-height: 20px;
+    margin-bottom: 5px;
+    /* margin: 10px; */
+    /* position: absolute; */
+    /* z-index: 2; */
+    animation: breathe 6s ease-in-out infinite;
+}
+
+.get-started-image {
+  position: relative;
+    display: inline-flex; /* shrinks to fit content, keeps circle anchored to the image */
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.get-started-circle {
+   min-width: 75%;
+   min-height: 75%;
+   position: absolute;
+   top: 0px;
+   left: -10px;
+  /* max-width: 150px; */
+  /* text-align: center; */
+  /* align-self: center; */
+  /* justify-self: left; */
+  padding: 100px;
+  /* background: #165610; */
+  border-radius: 50%;
+  /* margin: 0px; */
+  /* right: 20px; */
+  z-index: 1;
+  background: linear-gradient(
+    to top,
+    #69af8192 0%,
+    #94c8a4 40%,
+    #cbe6d3 75%,
+    #f7fbf5 100%
+);
+
+    animation: float-around 20s ease-in-out infinite;
+
+}
+
+@keyframes float-around {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(40px, -30px);
+    }
+    /* 50% {
+        transform: translate(-20px, 20px);
+    }
+    75% {
+        transform: translate(-40px, -20px);
+    }
+    100% {
+        transform: translate(0, 0);
+    } */
+}
+
+
+
+.get-started-section {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+  gap: 20px;
+}
+
+.get-started-heading span {
+  color: #165610;
+}
+
+.get-started-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.get-started-line {
+  min-width: 100px;
+  max-width: 150px;
+  text-align: center;
+  /* align-self: center; */
+  justify-self: center;
+  padding: 2px;
+  background: #165610;
+  border-radius: 50px;
+}
+
+.get-started-heading p {
+  color: #6b7280;
+  width: 80%;
+}
+
+.get-started-heading button {
+  /* all: inherit; */
+  padding: 15px;
+}
+
+/* INSTRUCTIONS SECTION */
+
+.instructions-section {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
+.instructions-container {
+  background: white;
+  box-shadow: 0 10px 20px #3ea32f76;
+  width: 80%;
+    border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
+  gap: 20px;
+  border: 1px solid rgba(131, 129, 129, 0.193);
+  position: relative;
+}
+
+.instructions-heading {
+  width: 100%;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* flex: 3; */
+  text-align: center;
+  align-items: center;
+  /* padding-left: 90px; */
+  padding-top: 50px;
+  /* padding-left: 30%; */
+}
+
+.instructions-number {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin: 0;
+    z-index: 1; /* sits above the card content */
+    padding: 10px;
+}
+
+.instructions-number .circle {
+    background: #2a6b1c;
+    min-width: 50px;
+    min-height: 30px;
+    width: 50px;   /* fixed size instead of 100%, since it's no longer sized by its flex sibling */
+    height: 50px;
+    border-radius: 50%; /* looks like you want a circular badge, not a rectangle */
+    font-size: 30px;    /* 45px was sized for the old flex-based box; scale down for a small badge */
+    color: white;
+    text-align: center;
+    line-height: 50px;  /* vertically centers the number without needing flex/grid */
+    padding: 0;
+}
+
+.instructions-container .circle {
+  align-self: center;
+}
+
+
+
 @media screen and (min-width: 340px) {
   .circle {
     height: 70px;
@@ -215,7 +429,7 @@ button {
     }
 
     button {
-      font-size: 20px;
+      font-size: 22px !important;
       padding: 15px;
     color: white;
     border: none;
@@ -251,6 +465,43 @@ button {
     .data-analysis {
       height: 70px !important;
     }
+
+    .circle-grid {
+    display: grid;
+    gap: clamp(4px, 1vw, 16px);
+    width: 32%;
+    height: 50%;
+    left: 120px;
+}
+
+    .get-started-circles {
+    /* aspect-ratio: 1 / 1; */
+    border-radius: 100%;
+    background: #1656105b;
+    width: 10px;
+    /* min-width: 5px; */
+    /* min-height: 5px; */
+    /* max-width: 20px; */
+    /* max-height: 20px; */
+    /* margin-bottom: 10px; */
+    /* margin: 10px; */
+    /* position: absolute; */
+    /* z-index: 2; */
+    animation: breathe 6s ease-in-out infinite;
+}
+
+.get-started-circle {
+  min-width: 60%;
+  min-height: 65%;
+}
+
+.get-started-image img {
+  width: 75%;
+}
+
+.get-started-image::after {
+  bottom: 65px;
+}
 
 }
 
@@ -294,7 +545,7 @@ button {
       height: 60px;
     }
 
-    .hero-section-heading h1 {
+    .hero-section-heading h1, .get-started-section h1 {
       font-size: 60px;
       text-align: center;
     }
@@ -316,18 +567,44 @@ button {
 
     button {
       padding: 15px;
-    font-size: 20px;
+    font-size: 22px;
     color: white;
     border: none;
     border-radius: 15px;
     font-weight: 500;
     }
+
+    .get-started-section {
+      display: flex;
+      flex-direction: row;
+      gap: 8%;
+    }
+
+    .get-started-image img {
+      width: 100%;
+    }
+
+    .get-started-circle {
+      min-width: 80%;
+      min-height: 71%;
+    }
+
+    .get-started-heading {
+      align-items: last baseline;
+      text-align: left;
+    }
+
+    .get-started-heading h1 {
+      text-align: left;
+    }
+
+
 }
 
 @media screen and (min-width: 1000px) {
       .hero-section-image {
-        width: 100% !important;
-        height: 100% !important;
+        width: 85% !important;
+        /* height: 90% !important; */
       }
 }
 
@@ -354,8 +631,33 @@ button {
       width: 100% !important;
       min-width: 660px;
       padding: 0px !important;
-      height: 100% !important;
+      /* height: 100% !important; */
     }
+
+    .hero-buttons-container {
+      width: 100% !important;
+      gap: 15px;
+    }
+
+    .hero-buttons-container button {
+      font-size: 21px !important;
+    }
+
+    .get-started-heading h1 {
+    width: 80% !important;
+  }
+
+  .get-started-section {
+    gap: 20px;
+  }
+
+  .get-started-line {
+    width: 70%;
+  }
+
+  .get-started-heading p {
+    width: 70%;
+  }
 }
 
 @media screen and (min-width: 1340px) {
@@ -369,9 +671,6 @@ button {
     width: 90%;
   }
 
-  .hero-buttons-container {
-    /* gap: 50px; */
-  }
 
   button {
     padding: 15px;
@@ -385,6 +684,10 @@ button {
   .hero-section-heading {
     align-items: flex-start;
     justify-items: left;
+  }
+
+  .get-started-heading h1 {
+    width: 50% !important;
   }
 
 }

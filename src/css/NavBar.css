@@ -54,6 +54,7 @@ padding: 0px;
     gap: 15px;
     align-items: center;
     font-weight: 500;
+    font-size: 24px;
 }
 
 .Log-In-Sign-In button { 
@@ -81,7 +82,7 @@ padding: 0px;
 
     @media screen and (min-width: 1000px) {
     .Log-In-Sign-In li, .nav-links a, .Log-In-Sign-In button {
-        font-size: 24px !important;
+        font-size: 22px !important;
     }
 
     .nav-links {
@@ -181,14 +182,17 @@ padding: 0px;
 
 .nav-links-mobile li:hover {
     background: rgba(62, 163, 47, 0.226);
+    border-left: 2px solid rgb(62, 163, 47);
 }
 
 .hamburger-menu-divider {
     width: 170px;
     margin: 10px;
-    margin-left: 25px;
+    /* margin-left: 25px; */
     /* margin-right: 25px; */
     margin-bottom: 0px;
+    align-self: center;
+    justify-self: center;
 }
 
 .nav-links-container button {
@@ -241,5 +245,127 @@ padding: 0px;
     padding: 20px;
     padding-top: 0px;
 }
+/* Add/merge these rules into your existing NavBar.css */
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1%;
+    flex: 1;
+    min-width: 0;     
+    justify-content: space-around; 
+    /* justify-items: center; */
+    /* justify-content: center; */
+}
+
+.measure-links {
+    position: absolute;
+    visibility: hidden;
+    pointer-events: none;
+    height: 0;
+    overflow: hidden;
+}
+
+.more-dropdown {
+    position: relative;
+}
+
+.more-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    /* font-size: 20px; */
+    /* padding: 4px 8px; */
+    color: black;
+    font-size: 22px;
+    padding: 0px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 50px;
+    right: -30px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 5px 10px 12px rgba(0, 0, 0, 0.25);
+    list-style: none;
+    margin: 4px 0 0;
+    padding: 4px 0;
+    min-width: 160px;
+    z-index: 999999;
+
+    /* closed state */
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+    pointer-events: none;
+
+    transform-origin: top right;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.dropdown-menu.open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+.dropdown-menu li {
+    padding: 8px 16px;
+    border-left: 2px solid green;
+    margin: 5px;
+    margin-left: 8px;
+}
+
+.dropdown-menu li:hover {
+    background: rgba(62, 163, 47, 0.226);
+    
+}
+
+.dropdown-menu li a {
+    display: block;
+    white-space: nowrap;
+}
+
+/* .dropdown-menu li a:hover {
+    font-size: 25px;
+} */
+
+@media screen and (max-width: 768px) {
+    .nav-links-container {
+        width: 30%;
+    }
+}
 
 /* RESPONSIVE */
+@media (min-width: 1250px) {
+    .contact-link {
+        display: none;
+    }
+
+    .more-dropdown {
+        display: flex;
+    }
+}
+
+@media (min-width: 1261px) {
+    .more-dropdown {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .nav-links {
+        flex: 0 0 60%;
+    }
+}
+
+
