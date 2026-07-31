@@ -8,16 +8,48 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import Login from "./web-pages/Login.jsx"
 
 function HomePage () {
+    const base = import.meta.env.BASE_URL;
+
 const instructions = [
-  {label: "Log Your Financial Data", description: "Add your income sources and dates. Track expenses and mark them as short-term or long-term.", step: "Step One", number: 1, image: "/purse.png"},
-  {label: "Set Your Goals", description: "Define what you're saving for and your target amount. Budgevo calculates your required monthly contribution.", step: "Step Two", number: 2, image: "/pie-chart.png"},
-  {label: "Track & Achieve", description: "Monitor your progress on the dashboard. Adjust your budget and watch yourself reach your goals.", step: "Step Three", number: 3, image: "/target.png"},
+  {
+    label: "Log Your Financial Data",
+    description: "Add your income sources and dates. Track expenses and mark them as short-term or long-term.",
+    step: "Step One",
+    number: 1,
+    image: `${base}purse.png`,
+  },
+  {
+    label: "Set Your Goals",
+    description: "Define what you're saving for and your target amount. Budgevo calculates your required monthly contribution.",
+    step: "Step Two",
+    number: 2,
+    image: `${base}pie-chart.png`,
+  },
+  {
+    label: "Track & Achieve",
+    description: "Monitor your progress on the dashboard. Adjust your budget and watch yourself reach your goals.",
+    step: "Step Three",
+    number: 3,
+    image: `${base}target.png`,
+  },
 ];
 
 const security_benefits = [
-  {label: "Bank-Grade Encrytion", description: "Your data is encrypted and protected with industry-standard security", image: "/verified.png"},
-  {label: "You're In Control", description: "We never accessed or store your banking credentials.", image: "/user-success.png"},
-  {label: "Secure Login", description: "Advance protection keeps your account safe and private.", image: "/padlock.png"},
+  {
+    label: "Bank-Grade Encryption",
+    description: "Your data is encrypted and protected with industry-standard security.",
+    image: `${base}verified.png`,
+  },
+  {
+    label: "You're In Control",
+    description: "We never access or store your banking credentials.",
+    image: `${base}user-success.png`,
+  },
+  {
+    label: "Secure Login",
+    description: "Advanced protection keeps your account safe and private.",
+    image: `${base}padlock.png`,
+  },
 ];
 
   const [width, setWidth] = useState(window.innerWidth);
@@ -45,11 +77,11 @@ const security_benefits = [
             <br />
             <div className='hero-buttons-container'>
               <button>Start Saving Today</button> 
-              <button className='white-button'> <img src='/play-button.png' id='play-button'/>See How It Works</button> 
+              <button className='white-button'> <img src={`${base}play-button.png`} id="play-button" />See How It Works</button> 
             </div>
         </div>
         <div className='hero-section-image'>
-          <img src='/home-page-phone.png' />
+          <img src={`${base}home-page-phone.png`} />
         </div>
       </div>
 
@@ -57,7 +89,7 @@ const security_benefits = [
       <div className='benefits-section'>
         <div className='benefits-info-box breathing'>
           <div className='circle'>
-            <img src='/bank.png' className='image-icons bank'/>
+            <img src={`${base}bank.png`} className="image-icons bank" />
           </div>
           <div>
             <h2>Expense Insights</h2>
@@ -67,7 +99,7 @@ const security_benefits = [
 
         <div className='benefits-info-box breathing-2'>
           <div className='circle'>
-            <img src='/uptrend.png' className='image-icons'/>
+            <img src={`${base}uptrend.png`} className="image-icons" />
           </div>
           <div>
             <h2>Predictive Goals</h2>
@@ -77,7 +109,7 @@ const security_benefits = [
 
         <div className='benefits-info-box breathing'>
           <div className='circle'>
-            <img src='/data-analysis.png' className='image-icons data-analysis'/>
+            <img src={`${base}data-analysis.png`} className="image-icons data-analysis" />
           </div>
           <div>
             <h2>Financial Dashboard</h2>
@@ -90,7 +122,7 @@ const security_benefits = [
 
       <div className='get-started-section'>
         <div className='get-started-image'>
-          <img src='/PC-image.png'/>
+          <img src={`${base}PC-image.png`} />
           <div className='get-started-circle' />
 
          
@@ -177,7 +209,7 @@ const security_benefits = [
         <div className='security-heading'>
           <div className='security-top-text'>
             <div className='circle'>
-            <img src='verified.png'/>
+            <img src={`${base}verified.png`} />
           </div>
           <p className='security-small-text'>Your Security, Our Priority</p>
           </div>
@@ -247,18 +279,18 @@ const security_benefits = [
           </div> 
 
           <div>
-            <div className='security-small-text security-bottom-text'><img src='verified.png'/><p>Your <b>privacy.</b> Your <b>control.</b> Your <b>commitment.</b></p></div>
+            <div className='security-small-text security-bottom-text'><img src={`${base}verified.png`} /><p>Your <b>privacy.</b> Your <b>control.</b> Your <b>commitment.</b></p></div>
           </div>
         </div>
         <div className='security-image'>
           <div className='icon-orbit'>
-            <div className='circle-2 padlock-icon'><img src='padlock.png' /></div>
-          <div className='circle-2 bank-icon'><img src='bank.png'/></div>
-          <div className='circle-2 user-icon'><img src='user.png'/></div>
-          <div className='circle-2 check-mark-icon'><img src='check-mark.png'/></div>
+            <div className='circle-2 padlock-icon'><img src={`${base}padlock.png`} /></div>
+          <div className='circle-2 bank-icon'><img src={`${base}bank.png`} /></div>
+          <div className='circle-2 user-icon'><img src={`${base}user.png`} /></div>
+          <div className='circle-2 check-mark-icon'><img src={`${base}check-mark.png`} /></div>
           </div>
           
-          <img src='/security-icon-2.png' />
+          <img src={`${base}security-icon-2.png`} />
           
         </div>
       </div>

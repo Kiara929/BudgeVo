@@ -15,12 +15,32 @@ function NavBar() {
   const itemRefs = useRef([]);
 
   const links = [
-    { label: "Home", href: "/", image: "/home.png" },
-    { label: "Workspace", href: "/workspace", image: "/briefcase.png" },
-    { label: "Dashboard", href: "/dashboard", image: "uptrend.png" },
-    { label: "About Us", href: "/about", image: "users.png" },
-    { label: "Contact Us", href: "/contact", image: "mail.png" },
-  ];
+  {
+    label: "Home",
+    href: "/",
+    image: `${import.meta.env.BASE_URL}home.png`,
+  },
+  {
+    label: "Workspace",
+    href: "/workspace",
+    image: `${import.meta.env.BASE_URL}briefcase.png`,
+  },
+  {
+    label: "Dashboard",
+    href: "/dashboard",
+    image: `${import.meta.env.BASE_URL}uptrend.png`,
+  },
+  {
+    label: "About Us",
+    href: "/about",
+    image: `${import.meta.env.BASE_URL}users.png`,
+  },
+  {
+    label: "Contact Us",
+    href: "/contact",
+    image: `${import.meta.env.BASE_URL}mail.png`,
+  },
+];
 
   const isMobile = width <= 768;
 
@@ -135,7 +155,7 @@ function NavBar() {
               <ul className="nav-links-mobile">
                 {links.map((link) => (
                   <li key={link.label}>
-                    <img className="nav-links-icons" src={`${import.meta.env.BASE_URL}link.image`} />
+                    <img className="nav-links-icons" src={link.image} />
                     <a href={link.href}>{link.label}</a>
                   </li>
                 ))}
