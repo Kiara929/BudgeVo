@@ -1,0 +1,52 @@
+html,
+body,
+#root {
+    margin: 0;
+    padding: 0;
+    /* width: 100% !important; */
+}
+
+li {
+  font-size: 15px;
+}
+
+body {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background: linear-gradient(
+        to right,
+        #ffffff 30%,
+        #ffffff 30%,
+        #fafcf8 50%,
+        #f3f8ef 75%,
+        #eef6e8 100%
+    );
+    
+    /* width: 100% !important; */
+    /* height: 100%; */
+  }
+
+  button {
+    background: linear-gradient(
+        to bottom,
+        #3FA32F 0%,
+        #368C29 45%,
+        #2C741F 100%
+    );
+    padding: 15px;
+    font-size: 20px;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+p {
+  font-size: 18px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box !important;
+}
