@@ -97,7 +97,7 @@ function NavBar() {
             <div className="nav-bar-image">
               <a href="/index.html">
                 <img
-                  src="/BudgeVo-Logo.png"
+                  src={`${import.meta.env.BASE_URL}BudgeVo-Logo.png`}
                   alt="BudgeVo Logo"
                   className="home-logo"
                 />
@@ -106,7 +106,7 @@ function NavBar() {
 
             {/* Hamburger Icon */}
             <img
-              src="/more.png"
+              src={`${import.meta.env.BASE_URL}more.png`}
               className="hamburger-icon"
               alt="Open Menu"
               onClick={() => setMenuOpen(true)}
@@ -118,14 +118,14 @@ function NavBar() {
               <div className="hamburger-icons">
                 <a href="/">
                   <img
-                    src="/BudgeVo-Logo.png"
+                    src={`${import.meta.env.BASE_URL}BudgeVo-Logo.png`}
                     className="hamburger-logo"
                     alt="BudgeVo Logo"
                   />
                 </a>
 
                 <img
-                  src="/reject.png"
+                  src={`${import.meta.env.BASE_URL}reject.png`}
                   className="exit-hamburger-menu"
                   alt="Close Menu"
                   onClick={() => setMenuOpen(false)}
@@ -135,7 +135,7 @@ function NavBar() {
               <ul className="nav-links-mobile">
                 {links.map((link) => (
                   <li key={link.label}>
-                    <img className="nav-links-icons" src={link.image} />
+                    <img className="nav-links-icons" src={`${import.meta.env.BASE_URL}link.image`} />
                     <a href={link.href}>{link.label}</a>
                   </li>
                 ))}
@@ -146,7 +146,7 @@ function NavBar() {
               <div className="Log-In-Sign-In-mobile">
                 <ul>
                   <li>
-                    <img src="/user.png" className="nav-links-icons" alt="" />
+                    <img src={`${import.meta.env.BASE_URL}user.png`} className="nav-links-icons" alt="" />
                     <Link to="/login">Login</Link>
                   </li>
                 </ul>
@@ -160,7 +160,7 @@ function NavBar() {
         <div className="nav-bar-container">
           <nav className="nav-bar">
             <div className="nav-bar-image">
-              <img src="/BudgeVo-Logo.png" alt="BudgeVo Logo" />
+              <img src={`${import.meta.env.BASE_URL}BudgeVo-Logo.png`} alt="BudgeVo Logo" />
             </div>
 
             {/*
