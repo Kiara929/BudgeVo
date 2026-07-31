@@ -13,6 +13,12 @@ function App() {
   {label: "Track & Achieve", description: "Monitor your progress on the dashboard. Adjust your budget and watch yourself reach your goals.", step: "Step Three", number: 3, image: "/target.png"},
 ];
 
+const security_benefits = [
+  {label: "Bank-Grade Encrytion", description: "Your data is encrypted and protected with industry-standard security", image: "/verified.png"},
+  {label: "You're In Control", description: "We never accessed or store your banking credentials.", image: "/user-success.png"},
+  {label: "Secure Login", description: "Advance protection keeps your account safe and private.", image: "/padlock.png"},
+];
+
   const [width, setWidth] = useState(window.innerWidth);
   const isMobile = width < 768;
 
@@ -160,6 +166,97 @@ function App() {
           
         <button>Go to Workspace ➜</button>
         {/* </div> */}
+      </div>
+
+      {/*  SECURITY SECTION */}
+      <div className='security-section'>
+        <div className='security-heading'>
+          <div className='security-top-text'>
+            <div className='circle'>
+            <img src='verified.png'/>
+          </div>
+          <p className='security-small-text'>Your Security, Our Priority</p>
+          </div>
+          
+          <h1>Your Data, <span>Your Security</span></h1>
+          <hr />
+          <p className='security-description'>Your manually put transactions - your banking information never leaves your control. Only secure your login.</p>
+          <p className='green-p'>Budget with piece of mind.</p>
+
+          <div className='security-items-container'>
+
+            {security_benefits.map((security_benefit) => 
+              isMobile ? (
+                <>
+                <div className='security-items'>
+                  <div className='security-items-mobile'>
+                    
+                    <div className='security-image-icon'>
+                    <img src={security_benefit.image}/>
+              </div>
+              <h2>{security_benefit.label}</h2>
+                  </div>
+              
+              <div>
+                {/* <h2>{security_benefit.label}</h2> */}
+              <p>{security_benefit.description}</p>
+              </div>
+            </div>
+                </>
+              ) : (
+                <>
+                  <div className='security-items'>
+              <div className='security-image-icon'><img src={security_benefit.image}/></div>
+              <div>
+                <h2>{security_benefit.label}</h2>
+              <p>{security_benefit.description}</p>
+              </div>
+            </div>
+                </>
+              )
+              )}
+            
+
+            {/* <div className='security-items'>
+              <div className='security-image-icon'><img src='verified.png'/></div>
+              <div>
+                <h2>Bank-Grade Encrytion</h2>
+              <p>Your data is encrypted and protected with industry-standard security.</p>
+              </div>
+            </div>
+
+            <div className='security-items'>
+              <div className='security-image-icon user-success'><img src="user-success.png" /></div>
+              <div>
+                <h2>You're In Control</h2>
+                <p>We never accessed or store your banking credentials.</p>
+              </div>
+            </div>
+
+            <div className='security-items'>
+              <div className='security-image-icon padlock'><img src='padlock.png'/></div>
+              <div>
+                <h2>Secure Login</h2>
+                <p>Advance protection keeps your account safe and private.</p>
+              </div>
+            </div> */}
+          </div> 
+
+          <div>
+            <div className='security-small-text security-bottom-text'><img src='verified.png'/><p>Your <b>privacy.</b> Your <b>control.</b> Your <b>commitment.</b></p></div>
+          </div>
+        </div>
+        <div className='security-image'>
+          <div className='icon-orbit'>
+            <div className='circle-2 padlock-icon'><img src='padlock.png' /></div>
+          <div className='circle-2 bank-icon'><img src='bank.png'/></div>
+          <div className='circle-2 user-icon'><img src='user.png'/></div>
+          <div className='circle-2 check-mark-icon'><img src='check-mark.png'/></div>
+          </div>
+          
+          <img src='/security-icon-2.png' />
+          
+        </div>
       </div>
     </>
   )
