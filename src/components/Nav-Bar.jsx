@@ -1,5 +1,6 @@
 import "../css/NavBar.css";
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   const [width, setWidth] = useState(window.innerWidth);
@@ -146,7 +147,7 @@ function NavBar() {
                 <ul>
                   <li>
                     <img src="/user.png" className="nav-links-icons" alt="" />
-                    <a href="">Log In</a>
+                    <Link to="/login">Login</Link>
                   </li>
                 </ul>
 
@@ -208,7 +209,7 @@ function NavBar() {
             </ul>
 
             <div className="Log-In-Sign-In">
-              <li>Log In</li>
+              <Link to="/login" className="login_link">Log In</Link>
               <button>Get Started</button>
             </div>
           </nav>

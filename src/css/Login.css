@@ -1,0 +1,211 @@
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    margin: 9%;
+}
+
+.login_container {
+    background-color: white;
+    box-shadow: 10px 5px 30px #0b360767;
+    width: 90%;
+    max-width: 1000px;
+    height: 80%;
+    display: flex;
+    flex-direction: column; /* signup: form on top, green on bottom */
+    align-self: center;
+    justify-self: center;
+    margin: 100px;
+    gap: 30px;
+    border-radius: 30px;
+    text-align: center;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    overflow: hidden; /* keeps login_heading's corners clipped to the container's rounded shape */
+}
+
+/* login: reverse the stack so the green panel sits on top, form on bottom */
+.login_container.order-reverse {
+    flex-direction: column-reverse;
+}
+
+.login {
+    padding: 10px 30px 30px 30px;
+}
+
+h1 {
+    color: #165610;
+}
+
+hr {
+     width: 60%;
+     max-width: 350px;
+        padding: 1.5px;
+        border-radius: 2px;
+        background: linear-gradient(90deg, #3ea32f, #a4dc93);
+        margin-top: -2px;
+        border: none;
+        margin: 20px;
+        margin-top: 10px;
+        align-self: center;
+        justify-self: center;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+input {
+    width: 90%;
+    max-width: 500px;
+    height: 35px;
+    padding-left: 10px;
+    border: none;
+    background-color: rgb(225, 225, 225);
+    border-radius: 5px;
+}
+
+.submit_button {
+    background: linear-gradient(
+        to bottom,
+        #3FA32F 0%,
+        #368C29 45%,
+        #2C741F 100%
+    );
+    /* padding: 15px; */
+    font-size: 18px;
+    color: white;
+    border: none;
+    /* border-radius: 15px; */
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+
+
+.login_heading {
+    background: linear-gradient(
+        to bottom,
+        #3FA32F 0%,
+        #368C29 45%,
+        #2C741F 100%
+    );
+    padding: 30px;
+    border-radius: 0px 0px 30px 30px; /* default (signup): rounded on the bottom */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    color: white;
+}
+
+/* login: heading sits on top now, so round the top corners instead and square off the bottom */
+.login_container.order-reverse .login_heading {
+    border-radius: 30px 30px 0px 0px;
+}
+
+.login_heading_button {
+    background-color: #badeb4 !important;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.244);
+    /* max-width: 1000px; */
+    justify-self: center;
+    align-self: center;
+}
+
+/* Flip animation hooks: rotates the card on its horizontal axis
+   as the layout reverses (green panel moving from bottom to top, or back) */
+.login_container.flip-down {
+    animation: flipDown 0.5s ease forwards;
+}
+
+.login_container.flip-up {
+    animation: flipUp 0.5s ease forwards;
+}
+
+@keyframes flipDown {
+    from {
+        transform: rotateX(-100deg);
+        opacity: 0;
+    }
+    to {
+        transform: rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes flipUp {
+    from {
+        transform: rotateX(100deg);
+        opacity: 0;
+    }
+    to {
+        transform: rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .login_wrapper {
+        max-width: 900px; /* give the side-by-side layout room to breathe */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+    }
+ 
+    .login_container {
+        flex-direction: row;
+        align-items: stretch; /* both panels stretch to match each other's height */
+        height: auto;
+        align-self: center;
+        justify-self: center;
+        min-width: 100%;
+        min-height: 400px;
+    }
+ 
+    /* login: reverse to row-reverse so the heading panel swaps to the left, form to the right */
+    .login_container.order-reverse {
+        flex-direction: row-reverse;
+    }
+ 
+    .login,
+    .login_heading {
+        flex: 1; /* split the container evenly between the two panels */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    input {
+        height: 50px;
+        font-size: 18px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    hr {
+        width: 200px;
+        height: 4px;
+        border-radius: 40px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .login_container {
+        min-width: 1100px;
+        min-height: 500px;
+    }
+
+    body {
+        margin: 5%;
+    }
+}

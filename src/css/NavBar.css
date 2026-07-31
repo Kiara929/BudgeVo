@@ -335,6 +335,20 @@ padding: 0px;
     white-space: nowrap;
 }
 
+.login_link {
+ text-decoration: none;
+ color: black;
+ /* font-size: 20px; */
+ 
+}
+
+.login_link:hover {
+    color: green;
+    font-size: 110%;
+    transition: color 0.8s ease;
+    transition: font-size 0.8s ease;
+}
+
 /* .dropdown-menu li a:hover {
     font-size: 25px;
 } */
