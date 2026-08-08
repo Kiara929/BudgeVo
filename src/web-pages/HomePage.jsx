@@ -69,7 +69,8 @@ const security_benefits = [
       
 
       <NavBar />
-      {/* Hero Section */}
+      <div className="home-page-container">
+        {/* Hero Section */}
       <div className='hero-section'>
         <div className='hero-section-heading'>
             <h1>Take Control Of <br /> <span>Your Money.</span> <br /> Build a Better Future.</h1>
@@ -283,6 +284,18 @@ const security_benefits = [
           </div>
         </div>
         <div className='security-image'>
+          <picture>
+    <source
+        media="(min-width: 1200px)"
+        srcSet={`${base}security-icon-8_1500px.png`}
+    />
+
+    <img
+        src={`${base}security-icon-2.png`}
+        alt="Security"
+        className="security-image"
+    />
+</picture>
           <div className='icon-orbit'>
             <div className='circle-2 padlock-icon'><img src={`${base}padlock.png`} /></div>
           <div className='circle-2 bank-icon'><img src={`${base}bank.png`} /></div>
@@ -290,10 +303,13 @@ const security_benefits = [
           <div className='circle-2 check-mark-icon'><img src={`${base}check-mark.png`} /></div>
           </div>
           
-          <img src={`${base}security-icon-2.png`} />
+          
+          
           
         </div>
       </div>
+      </div>
+      
     </>
   )
 }
