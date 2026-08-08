@@ -24,7 +24,7 @@
 .form-group {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 20px;
 }
 
 .contact-form button {
@@ -53,4 +53,13 @@
     .contact-form textarea {
         width: 90%;
     }
+
+    .contact-form button {
+    width: 90%;
+}
+
+.form-group input{
+    width: 110%;
+    
+}
 }
