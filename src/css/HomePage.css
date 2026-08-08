@@ -787,6 +787,18 @@ button {
   border-radius: 0px 0px 30px 30px;
 }
 
+/* CONTACT SECTION */
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 @media screen and (min-width: 340px) {
   .circle {
     height: 70px;

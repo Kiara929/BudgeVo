@@ -6,6 +6,7 @@ import '../css/HomePage.css'
 import NavBar from '../components/Nav-Bar'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import Login from "./web-pages/Login.jsx"
+import ContactForm from '../components/Contact-Form.jsx';
 
 function HomePage () {
     const base = import.meta.env.BASE_URL;
@@ -306,6 +307,19 @@ const security_benefits = [
           
           
           
+        </div>
+      </div>
+
+      {/* Contact Section */}
+
+      <div className='contact-section'>
+        <div className="contact-section-heading">
+          <h2>GET IN TOUCH</h2>
+          <br />
+          <h1>We'd Love to Hear From You</h1>
+          <p>Have questions, feedback, or just want to say hello? Reach out to us and we'll get back to you as soon as possible.</p>
+          <br /> <br />
+          <ContactForm />
         </div>
       </div>
       </div>
