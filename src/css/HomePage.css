@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
+  margin: 5%;
 }
 
 .hero-section h1 {
@@ -517,14 +518,7 @@ button {
         object-fit: contain;
     }
 
-/* image circle — top-right corner on mobile */
-.instructions-icon {
-  /* position: absolute; */
-  /* top: 0px; */
-  /* right: 0px; */
-  /* z-index: 1; */
-  /* margin: 10px; */
-}
+
 
 /* SECURITY SECTION */
 
@@ -758,10 +752,6 @@ button {
   /* position: absolute; 
   width: 60%;
 } */
-
-.security-image {
-  /* position: relative; */
-}
 
 /* .padlock-icon {
   width: 20px;
