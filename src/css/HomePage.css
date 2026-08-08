@@ -1,4 +1,9 @@
-
+.home-page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin: 5%;
+}
 
 .hero-section h1 {
   font-size: 40px;
@@ -513,14 +518,7 @@ button {
         object-fit: contain;
     }
 
-/* image circle — top-right corner on mobile */
-.instructions-icon {
-  /* position: absolute; */
-  /* top: 0px; */
-  /* right: 0px; */
-  /* z-index: 1; */
-  /* margin: 10px; */
-}
+
 
 /* SECURITY SECTION */
 
@@ -575,9 +573,16 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* background-image: url("/security-icon-2.png"); */
 }
 
 .security-image img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.security-image picture {
     display: block;
     max-width: 100%;
     height: auto;
@@ -644,9 +649,10 @@ button {
 
 .security-image-icon {
     background: #3ea32f41;
-    height: 100%;
-    width: 50%;
+    /* height: 100%; */
+    /* width: 50%; */
     min-width: 80px;
+    max-width: 100px;
     height: 80px;
     /* width: 120px; */
     /* max-width: 100px !important; */
@@ -746,10 +752,6 @@ button {
   /* position: absolute; 
   width: 60%;
 } */
-
-.security-image {
-  /* position: relative; */
-}
 
 /* .padlock-icon {
   width: 20px;
@@ -930,12 +932,12 @@ button {
 }
 
 .icon-orbit {
-    --radius: clamp(190px, 18vw, 200px);
+    --radius: clamp(160px, 18vw, 200px);
 }
 
 .circle-2 {
-  width: 76px;
-  height: 76px;
+  width: 70px;
+  height: 70px;
 }
 
 .circle-2 img {
@@ -1038,6 +1040,9 @@ button {
       text-align: left;
     }
 
+    .icon-orbit {
+    --radius: clamp(185px, 18vw, 200px);
+}
 
 }
 
@@ -1046,6 +1051,20 @@ button {
         width: 85% !important;
         /* height: 90% !important; */
       }
+
+      .icon-orbit {
+    --radius: clamp(210px, 18vw, 200px);
+}
+
+.circle-2 {
+  width: 90px;
+  height: 90px;
+}
+
+.circle-2 img {
+  width: 55px;
+  height: 55px;
+}
 }
 
 @media screen and (min-width: 1200px) {
@@ -1098,6 +1117,120 @@ button {
   .get-started-heading p {
     width: 70%;
   }
+
+  .security-section {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .security-image {
+    width: 100%;
+    /* background-image: url("/security-icon-4.png"); */
+    
+    /* background-size: contain; */
+    /* background-repeat: no-repeat; */
+  }
+
+  .security-image picture img {
+    /* display: block; */
+    width: 100%;
+    height: 100%;
+    height: 1100px;
+    border-radius: 0px 30px 30px 0px;
+    /* align-self: baseline; */
+}
+
+/* .icon-orbit {
+    --radius: clamp(220px, 18vw, 200px);
+} */
+
+.icon-orbit {
+  position: absolute;
+  inset: 0;
+  top: 6%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Controls the shape of the orbit */
+  --orbit-width: clamp(160px, 16vw, 50%);
+  --orbit-height: clamp(260px, 22vw, 30%);
+}
+
+
+/* Individual orbiting icons */
+.circle-2 {
+  position: absolute;
+
+  width: 60px;
+  height: 60px;
+
+  border-radius: 50%;
+  background: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 12px 24px -8px rgba(20, 50, 12, 0.35);
+
+  /* Creates the vertical oval path */
+  offset-path: ellipse(
+    var(--orbit-width)
+    var(--orbit-height)
+    at center
+  );
+
+  offset-rotate: 0deg;
+
+  /* Orbit speed */
+  animation: orbit 20s linear infinite;
+}
+
+
+/* Icon inside the circle */
+.circle-2 img {
+  width: 35px;
+  height: 35px;
+}
+
+
+/* Stagger the icons 90° apart */
+.padlock-icon {
+  animation-delay: 0s;
+}
+
+.bank-icon {
+  animation-delay: -5s;
+}
+
+.check-mark-icon {
+  animation-delay: -10s;
+}
+
+.user-icon {
+  animation-delay: -15s;
+}
+
+
+/* User icon adjustment */
+.user-icon img {
+  padding-left: 3px;
+  padding-bottom: 1px;
+}
+
+
+/* Smooth oval orbit */
+@keyframes orbit {
+  from {
+    offset-distance: 0%;
+  }
+
+  to {
+    offset-distance: 100%;
+  }
+}
 }
 
 @media screen and (min-width: 1340px) {
