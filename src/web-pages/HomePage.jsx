@@ -7,6 +7,7 @@ import NavBar from '../components/Nav-Bar'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import Login from "./web-pages/Login.jsx"
 import ContactForm from '../components/Contact-Form.jsx';
+import Footer from '../components/Footer.jsx';
 
 function HomePage () {
     const base = import.meta.env.BASE_URL;
@@ -323,7 +324,7 @@ const security_benefits = [
         </div>
       </div>
       </div>
-      
+      <Footer />
     </>
   )
 }
