@@ -156,7 +156,7 @@ function NavBar() {
                 {links.map((link) => (
                   <li key={link.label}>
                     <img className="nav-links-icons" src={link.image} />
-                    <a href={link.href}>{link.label}</a>
+                    <Link to={link.href}>{link.label}</Link>
                   </li>
                 ))}
               </ul>
@@ -195,7 +195,7 @@ function NavBar() {
                   key={link.label}
                   ref={(el) => (itemRefs.current[index] = el)}
                 >
-                  <a href={link.href}>{link.label}</a>
+                    <Link to={link.href}>{link.label}</Link>
                 </li>
               ))}
             </ul>
@@ -203,7 +203,7 @@ function NavBar() {
             <ul ref={navLinksRef} className="nav-links">
               {visibleLinks.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href}>{link.label}</a>
+                    <Link to={link.href}>{link.label}</Link>
                 </li>
               ))}
 
