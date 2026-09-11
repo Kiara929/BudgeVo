@@ -1,0 +1,747 @@
+/* ===== CONTAINER ===== */
+
+.workspace-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.workspace-container.is-mobile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.workspace-container.is-desktop {
+    display: flex;
+    flex-direction: row; /* sidebar sits next to content, not above it */
+    width: 100%;
+    height: 100vh;
+}
+
+/* ===== DESKTOP SIDEBAR ===== */
+
+.workspace-sidebar {
+    flex: 0 0 260px; /* fixed-width real column */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    /* color: black !important; */
+
+    background-image:
+        url("/leaves (2).png");
+        /* linear-gradient(
+            180deg,
+            #034d08 0%,
+            #159615 45%,
+            #04830c 75%,
+            #012b04 100%
+        ); */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+
+    background-repeat: no-repeat, no-repeat;
+    background-position: bottom center, center;
+    background-size: 100% auto, cover;
+
+    overflow-y: auto;
+}
+
+.workspace-sidebar.nav-links-mobile.workspace-menu-container li a {
+    color: black;
+}
+
+.nav-links-mobile.workspace-menu-container li a {
+    font-size: 19px;
+    color: black;
+}
+
+.workspace-sidebar .workspace-banner-logo {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 0px;
+    padding: 0px;
+    justify-content: center;
+}
+
+/* ===== DESKTOP MAIN COLUMN ===== */
+
+.workspace-main {
+    flex: 1; /* takes the remaining width */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* overflow-y: hidden !important; */
+    /* overflow-y: hidden; */
+    overflow-x: hidden;
+    /* padding: 0 20px; */
+    /* margin: 20px; */
+
+}
+
+/* ===== SHARED LOGO / BRAND ===== */
+
+.workspace-logo {
+    display: flex;
+    width: 70px;
+}
+
+.workspace-logo-header {
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.workspace-logo-header span {
+    color: #1cc402;
+}
+
+.workspace-banner h1,
+.workspace-logo-header h1 {
+    font-size: 25px;
+    font-weight: 500;
+    margin: 0;
+    text-decoration: none;
+    color: rgb(22, 113, 24);
+}
+
+/* ===== MOBILE TOP BAR ===== */
+
+.workspace-banner-mobile {
+    min-height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10%;
+    width: 100%;
+    box-shadow: inset 0px -1px 0px #d7d8db;
+}
+
+.workspace-banner-logo {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 0px;
+    padding: 0px;
+    justify-content: center;
+}
+
+.workspace-banner-logo .hamburger-icon {
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+    padding: 0px;
+    align-self: center;
+    cursor: pointer;
+}
+
+/* ===== HEADER BAR (search / notifications / profile) — shared by mobile + desktop ===== */
+
+.workspace-banner-header {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    align-items: center;
+    /* align-self: flex-start; */
+    gap: 10px;
+    justify-content: center;
+    /* height: 100%; */
+    /* margin-right: 10px; */
+    min-height: 100px;
+    padding: 12px 20px;
+}
+
+.workspace-notification-icon {
+    width: 25px;
+    height: 23px;
+    margin-right: 10px;
+}
+
+.workspace-profile-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.workspace-profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.workspace-hamburger-icon {
+    width: 50px;
+    height: 50px;
+    left: 0px;
+    margin: 0px;
+    padding: 0px;
+    align-self: center;
+}
+
+/* ===== MOBILE SLIDE-IN OVERLAY MENU ===== */
+
+.workspace-menu {
+    background: white;
+    width: 50%;
+    min-width: 210px;
+    height: 100%;
+    z-index: 9999;
+    padding: 0px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+    transform: translateX(-100%); /* hidden off-screen to the left */
+
+    transition: transform 0.35s ease-in-out;
+}
+
+.workspace-menu.open {
+    transform: translateX(0); /* slides in from the left */
+}
+
+.exit-hamburger-menu-workspace {
+    height: 29px;
+    padding-right: 10px;
+    align-self: baseline;
+    cursor: pointer;
+}
+
+.hamburger-menu-divider {
+    width: 170px;
+    margin: 10px;
+    margin-bottom: 0px;
+    align-self: center;
+    justify-self: center;
+}
+
+/* ===== NAV LINKS (used both in mobile overlay and desktop sidebar) ===== */
+
+.nav-links-mobile {
+    list-style: none;
+    padding-left: 25px;
+    line-height: 25px;
+}
+
+.nav-links-mobile li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-radius: 5px;
+    width: 81%;
+    padding: 10px;
+}
+
+.nav-links-mobile a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+.nav-links-icons {
+    height: 20px;
+}
+
+/* Desktop sidebar variant — same list, styled for the green sidebar */
+
+.nav-links-mobile.workspace-menu-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-left: 10px;
+}
+
+.nav-links-mobile.workspace-menu-container li a {
+    font-size: 19px;
+    color: black;
+}
+
+/* ===== MONTH / DATE BANNER ===== */
+
+.workspace-sections {
+    padding: 20px;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    /* overflow-y: auto; */
+
+}
+
+.workspace-banner-date {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+    white-space: nowrap;
+    /* padding-right: 20px; */
+}
+
+.workspace-month {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    white-space: nowrap;
+
+}
+
+.workspace-month-arrows {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.workspace-today-date p {
+    margin: 0;
+    color: #6b6656;
+    font-size: 14px;
+    /* margin-right: 20px; */
+}
+
+/* WORKSPACE DASHBAORD HEADING */
+
+.workspace-dashboard-section {
+    background-color: white;
+    padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+}
+
+.workspace-dashboard-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.workspace-dashboard-heading-words {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.workspace-calendar-goals-section {
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.calendar-section, .goals-section {
+    background-color: white;
+    padding: 15px;
+        border-radius: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+}
+
+.calendar-legend {
+    width: 10px;
+    height: 10px;
+    /* background-color: #012b04; */
+}
+
+.calendar-legend.green {
+    background-color: #1cc402;
+}
+
+.calendar-legend.red {
+    background-color: red;
+}
+
+.calendar-legends {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.calendar-legends p {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.workspace-calendar-heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.workspace-goals-heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.goals-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.workspace-goals-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    padding: 15px;
+}
+
+.view-all-link {
+    text-decoration: none;
+    color: #2b7d23;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.workspace-actions {
+    display: grid;
+    /* flex-direction: row; */
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+
+}
+
+.workspace-action-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.workspace-action-icon {
+    width: 20px;
+    min-height: 20px;
+    margin-right: 5px;
+}
+
+.workspace-transactions-section {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background-color: white;
+    border-radius: 30px;
+    padding: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.workspace-transactions-heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.workspace-transactions-filters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 80%;
+    align-self: center;
+}
+
+.workspace-expenses-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 35px;
+    padding: 30px;
+}
+
+.workspace-expense-item {
+    /* position: relative; */
+
+    display: flex;
+    flex-direction: column;
+    /* gap: 20px; */
+    align-items: center;
+
+    /* padding: 20px; */
+    border-radius: 20px;
+
+    text-align: center;
+
+    /* background: linear-gradient(
+        180deg,
+        #3ea32f41 0%,
+        #ffffff 45%,
+        #ffffff 75%,
+        #ffffff 100%
+    ); */
+
+    /* box-shadow: 0 10px 20px rgba(27, 88, 21, 0.2); */
+
+    overflow: hidden;
+}
+
+/* Faded leaves */
+/* .workspace-expense-item::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image: url("/leaves (2).png");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 180px auto;
+
+    opacity: 0.15;
+
+    pointer-events: none;
+} */
+
+/* Keep card content above the leaves */
+.workspace-expense-item > * {
+    position: relative;
+    z-index: 1;
+}
+
+.expense-item-category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #ecefeb50; */
+    color: black;
+    padding: 7px 15px;
+    /* padding: 13px; */
+    /* border-radius: 25px; */
+    /* font-size: 14px; */
+    /* gap: 50px; */
+    text-align: center;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    /* border: 1px solid #d7d8db; */
+}
+
+.expense-item-description {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.workspace-expenses-table {
+    width: 100%;
+    /* table-layout: fixed; */
+    border-collapse: collapse;
+    border-spacing: 15px;
+    padding: 20px;
+    /* gap */
+}
+
+
+
+.workspace-expenses-table td:nth-child(3) {
+    /* width: 15%; */
+    text-wrap: nowrap;
+}
+
+.workspace-expenses-table td:nth-child(6) {
+    color: red;
+}
+
+.workspace-expenses-table tr {
+    margin-bottom: 25px;
+    border-bottom: 1px solid #dce8d9;
+    /* padding: 20px; */
+}
+
+.workspace-expenses-table td {
+    padding: 10px;
+    /* border-radius: 50px; */
+    /* text-align: center; */
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    /* border: 1px solid #e0e0e04a; */
+    /* font-size: 14px; */
+}
+
+.expense-item-amount-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    color: #ed4242;
+}
+
+.workspace-expense-icon {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media screen and (min-width: 769px) {
+    .workspace-banner-header input {
+        width: 60%;
+        max-width: 600px;
+    }
+
+    .workspace-banner-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    flex: 0 0 auto;      /* don't grow, don't shrink — size to content */
+    min-height: 80px;    /* replaces height: 100% */
+    margin-right: 10px;
+    padding: 12px 20px;
+}
+
+.workspace-sections {
+    flex: 1;              /* takes the remaining vertical space below the header */
+    overflow-y: auto !important;  /* prevents vertical scrolling of the main column */
+    padding: 30px;
+}
+
+
+.workspace-banner-date {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: space-between;
+}
+
+.workspace-banner-header input {
+    min-width: 250px;
+    max-width: 500px;
+}
+
+.nav-links-mobile.workspace-menu-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 10px;
+}
+}
+
+@media screen and (min-width: 970px) {
+    .workspace-dashboard-heading {
+        display: flex;
+        flex-direction: row;
+        text-align: left;
+        padding: 20px;
+    }
+}
+
+@media screen and (min-width: 1127px) {
+
+    .workspace-sections {
+    flex: 1;              /* takes the remaining vertical space below the header */
+    overflow-y: auto !important;  /* prevents vertical scrolling of the main column */
+    padding: 40px 50px;
+    gap: 50px;
+}
+
+    .workspace-dashboard-heading {
+        padding: 10px;
+        justify-content: space-between;
+    }
+
+    .workspace-calendar-goals-section {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .calendar-section {
+        flex: 2;
+    }
+
+    .goals-section {
+        flex: 1;
+    }
+
+    
+
+    .workspace-expenses-list {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px;
+    }
+
+    .workspace-expenses-table {
+        width: 90%;
+        /* table-layout: fixed; */
+        border-collapse: collapse;
+        border-spacing: 30px;
+        /* padding: 50px; */
+        align-self: center;
+        /* background-color:#c6e7bc35; */
+        /* gap */
+    }
+
+    .workspace-expenses-table td:first-child {
+        width: 20%;
+        
+    }
+
+
+    .expense-item-actions {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .workspace-expenses-table tr {
+        padding: 20px;
+        background-color:#76787606;
+
+        /* border-radius: 50px; */
+        /* text-align: center; */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        /* border: 1px solid #e0e0e04a; */
+        /* font-size: 14px; */
+    }
+
+
+    .workspace-expense-item {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+
+        /* background: linear-gradient(
+            100deg,
+            #3ea32f41 0%,
+            #ffffff 45%,
+            #ffffff 75%,
+            #ffffff 100%
+        ); */
+    }
+
+    .expense-item-description {
+        flex-direction: row;
+        /* align-items: flex-start; */
+        gap: 30px;
+    }
+}
