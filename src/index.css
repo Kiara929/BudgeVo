@@ -3,7 +3,7 @@ body,
 #root {
     margin: 0;
     padding: 0;
-    /* width: 100% !important; */
+    width: 100% !important;
 }
 
 li {
@@ -43,7 +43,7 @@ body {
 
 p {
   font-size: 18px;
-  color: #6b7280;
+  /* color: #6b7280; */
 }
 
 * {
