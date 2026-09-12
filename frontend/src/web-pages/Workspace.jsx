@@ -99,7 +99,7 @@ function Workspace() {
     const expenseItems = [
         { id: 1, description: "Groceries", category: "One Time", amount: 150.75, date: "2026-09-02" },
         { id: 2, description: "Utilities", category: "Recurring", amount: 80.50, date: "2026-09-03" },
-        { id: 3, description: "Gym Membership", category: "Long term", amount: 35.00, date: "2026-09-05" },
+        { id: 3, description: "Gym Membership", category: "Long term", amount: 45.00, date: "2026-09-05" },
         { id: 4, description: "Car Insurance", category: "Short term", amount: 120.00, date: "2026-09-07" },
     ];
 
