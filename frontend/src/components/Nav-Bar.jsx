@@ -171,7 +171,7 @@ function NavBar() {
                   </li>
                 </ul>
 
-                <button>Get Started</button>
+                <button><Link to="/signup">Get Started</Link></button>
               </div>
             </aside>
           </nav>
@@ -230,7 +230,7 @@ function NavBar() {
 
             <div className="Log-In-Sign-In">
               <Link to="/login" className="login_link">Log In</Link>
-              <button>Get Started</button>
+              <button><Link to="/signup">Get Started</Link></button>
             </div>
           </nav>
         </div>

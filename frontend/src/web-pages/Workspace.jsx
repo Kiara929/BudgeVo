@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 import DashboardCard from "../components/Dashboard-Card";
 import Calendar from "../components/Calendar";
 import ProgressBar from "../components/Progress-Bar";
+import PopUpMenu from "../components/Pop-Up-Menu";
 
 function Workspace() {
 
         const [userData, setUserData] = useState(null);
+        const [showExpenseMenu, setShowExpenseMenu] = useState(false);
 
     
     useEffect(() => {
@@ -35,6 +37,8 @@ function Workspace() {
 
     getUser();
 }, []);
+
+
 
     const links = [
         {
@@ -129,6 +133,8 @@ function Workspace() {
     // const pageContent = (
 
     // );
+
+    
 
     return (
         <div className={`workspace-container ${isMobile ? "is-mobile" : "is-desktop"}`}>
@@ -330,9 +336,16 @@ function Workspace() {
                     </div>
                     <div className="workspace-actions">
                         <button className="workspace-action-button"> +  Add Income</button>
-                        <button className="workspace-action-button"> +  Add Expense</button>
+                        <button className="workspace-action-button"     onClick={() => setShowExpenseMenu(true)}> +  Add Expense</button>
                         <button className="workspace-action-button"> <img src="pencil.png" alt="Edit" className="workspace-action-icon" /> Edit Budget</button>
                         <button className="workspace-action-button"> <img src="bullseye.png" alt="Manage Goals" className="workspace-action-icon" /> Manage Goals</button>
+
+                        {showExpenseMenu && (
+                            <PopUpMenu
+                                type="Expense"
+                                onClose={() => setShowExpenseMenu(false)}
+                            />
+                        )}
                     </div>
                     <div className="workspace-transactions-section">
                         <div className="workspace-transactions-heading">
@@ -441,6 +454,11 @@ function Workspace() {
     )}
 
 </div>
+                    </div>
+                    <div>
+                        <ul>
+
+                        </ul>
                     </div>
                 </div>
             </div>
