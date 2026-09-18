@@ -1,0 +1,747 @@
+/* =========================================================
+   GOALS PAGE
+   ========================================================= */
+
+.goals {
+    /* background: #f5f7f4; */
+}
+
+.goals .workspace-main {
+    /* background: #f5f7f4; */
+}
+
+.goals .workspace-sections {
+    /* max-width: 1200px; */
+}
+
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.goals-main-heading {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 22px;
+}
+
+.goals-main-heading h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.goals-main-heading hr {
+    width: 30%;
+    height: 1px;
+    border: 0;
+    margin: 0;
+}
+
+.goals-page-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 17px;
+    text-align: center;
+}
+
+.goals-page-heading p {
+    /* max-width: 700px; */
+    margin: 0;
+    color: #687468;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.goals-page-heading button {
+    width: 100%;
+    min-width: 145px;
+    max-width: 180px;
+    padding: 12px 20px;
+    align-self: center;
+
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+
+/* =========================================================
+   GOALS OVERVIEW
+   ========================================================= */
+
+.goals-page-section {
+    background: white;
+    border: 1px solid #e4ebe1;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 13px;
+    padding: 15px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    margin-bottom: 25px;
+}
+
+.goals-page-section .goals-count-heading {
+    align-self: flex-start;
+    margin: 0 0 3px;
+
+    color: #376d27;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   GOAL CARD
+   ========================================================= */
+
+.goal-item {
+    width: 100%;
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 9px;
+
+    padding: 14px;
+
+    border: 1px solid #e4ebe1;
+    border-radius: 13px;
+    background: #fbfcfa;
+
+    text-align: left;
+    align-self: center;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.goal-item:hover {
+    border-color: #51964271;
+    box-shadow: 0 5px 16px rgba(37, 68, 35, 0.1);
+    transform: translateY(-1px);
+}
+
+.goal-item h3 {
+    margin: 0;
+    color: #263526;
+    font-weight: 650;
+}
+
+.goal-item p {
+    margin: 0;
+    color: #687468;
+    font-size: 14px;
+}
+
+.goal-item .progress-bar {
+    width: 100%;
+    grid-column: 1;
+}
+
+
+/* =========================================================
+   GOAL / SUBGOAL ACCORDION
+   ========================================================= */
+
+.goal-subgoal-section {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.goal-subgoal-item {
+    background: rgb(255, 255, 255);
+    border: 1px solid #e1e9df;
+    border-radius: 13px;
+    overflow: hidden;
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================================================
+   ACCORDION HEADER
+   ========================================================= */
+
+.subgoal-heading {
+    min-height: 58px;
+    padding: 0 16px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    cursor: pointer;
+}
+
+.goal-subgoal-item h2 {
+    margin: 0;
+    color: #263526;
+    font-size: 19px;
+    font-weight: 650;
+}
+
+.dropdown-arrow-goals {
+    width: 17px;
+    height: 17px;
+    object-fit: contain;
+
+    opacity: 0.55;
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.2s ease;
+}
+
+.dropdown-arrow-goals:hover {
+    opacity: 0.9;
+}
+
+.dropdown-arrow-goals.active {
+    filter: brightness(0) saturate(100%) invert(37%) sepia(20%) saturate(900%) hue-rotate(65deg);
+    transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   EXPANDED CONTENT
+   ========================================================= */
+
+.subgoals-section {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    padding: 0 15px 20px;
+}
+
+.subgoals-section > p:first-child {
+    width: fit-content;
+    margin: 0;
+
+    padding: 5px 15px;
+    border-radius: 20px;
+
+    background: #edf6eb;
+    color: #376d27 !important;
+
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+
+/* =========================================================
+   MAIN GOAL PROGRESS
+   ========================================================= */
+
+.subgoal-goal-section {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    padding: 15px;
+
+    background: #f8faf7;
+    border: 1px solid #e5ece2;
+    border-radius: 13px;
+
+    box-shadow: none;
+}
+
+.goal-data {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.goal-data h2 {
+    margin: 0;
+    color: #1f321e;
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+}
+
+.goal-data p {
+    margin: 0;
+    color: #747d74;
+    font-size: 13px;
+}
+
+.subgoal-goal-section > p {
+    margin: 0;
+    color: #788078;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   SUBSECTION
+   ========================================================= */
+
+.subgoal-sub-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    text-align: left;
+}
+
+.subgoal-sub-section h3 {
+    margin: 4px 0;
+    color: #263526;
+    font-size: 15px;
+    font-weight: 650;
+}
+
+.subgoal-sub-section > p {
+    margin: 0;
+    color: #7a827a;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.subgoal-add-heading {
+    border: 1px dashed #c7d8c2;
+    background: #fafcf9;
+    border-radius: 10px;
+
+    padding: 15px;
+
+    color: #758075;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   SUBGOAL CARDS
+   ========================================================= */
+
+.subgoal-sub-section .subgoal-goal-section {
+    background: white;
+    padding: 17px;
+}
+
+.subgoal-sub-section .subgoal-goal-section:hover {
+    border-color: #beebb2;
+}
+
+.subgoal-sub-section .goal-data h2 {
+    font-size: 16px;
+    letter-spacing: 0;
+}
+
+.subgoal-sub-section .goal-data p {
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   FORMS
+   ========================================================= */
+
+.subgoal-add-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+
+    padding: 13px;
+
+    background: #f7f9f6;
+    border: 1px solid #e5ebe3;
+    border-radius: 12px;
+    align-items: center;
+}
+
+.subgoal-add-form input,
+.subgoal-add-form select {
+    width: 100%;
+    height: 42px;
+    box-sizing: border-box;
+
+    padding: 12px;
+
+    border: 1px solid #d9e2d6;
+    border-radius: 8px;
+
+    font-family: inherit;
+    font-size: 13px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+    align-self: center;
+}
+
+.subgoal-add-form input::placeholder {
+    color: #9ba39b;
+}
+
+.subgoal-add-form input:focus,
+.subgoal-add-form select:focus {
+    border-color: #70a266;
+    box-shadow: 0 0 0 3px rgba(55, 109, 39, 0.08);
+}
+
+.subgoal-add-form button {
+    grid-column: 1;
+
+    height: 42px;
+    width: 50%;
+
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    align-self: center;
+    margin: 0 auto;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.subgoal-add-form button:hover {
+    background: #2c5c20;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   CATEGORY AREA
+   ========================================================= */
+
+.popup-menu-category-inputs.popup-menu-main {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+
+    grid-column: 1 / -1;
+}
+
+.popup-menu-category-inputs.popup-menu-main select {
+    width: 100%;
+    flex: 1 !important;
+}
+
+.popup-menu-category-inputs.popup-menu-main .add-buttons {
+    width: 100%;
+    height: 36px;
+
+    background: transparent;
+    border: 1px solid #b9cbb4;
+    color: #376d27;
+
+    font-size: 14px;
+    flex: 1;
+}
+
+.popup-menu-category-inputs.popup-menu-main button:hover {
+    background: #edf5eb;
+}
+
+
+/* =========================================================
+   TRANSACTIONS
+   ========================================================= */
+
+.subgoal-goal-section.transaction {
+    padding: 15px 17px;
+    background: white;
+}
+
+.goal-data.transaction {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    width: 100%;
+    gap: 12px;
+}
+
+.transaction-goal-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 3px;
+    width: 100%;
+}
+
+.transaction-goal-heading h2 {
+    margin: 0;
+
+    color: #303a30;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.transaction-goal-heading h3 {
+    margin: 0;
+
+    color: #8a928a;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.transaction-goal-data {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    gap: 3px;
+
+    white-space: nowrap;
+}
+
+.transaction-goal-data p {
+    margin: 0;
+
+    color: #6f776f;
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   FORM ERROR
+   ========================================================= */
+
+.form-error {
+    margin: 0;
+    color: #b64a4a;
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   DESKTOP / TABLET
+   768px AND HIGHER
+   ========================================================= */
+
+@media screen and (min-width: 768px) {
+
+    .workspace-container.goals p {
+        font-size: 18px;
+    }
+
+    .workspace-container.goals h2 {
+        font-size: 30px;
+    }
+
+    .workspace-container.goals h3 {
+        font-size: 27px;
+    }
+    /* =====================================================
+       PAGE HEADER
+       ===================================================== */
+
+    .goals-main-heading {
+        gap: 8px;
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        justify-content: space-between;
+    }
+
+    .goals-main-writing {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        /* align-items: flex-start; */
+        /* justify-content: flex-start; */
+        flex: 1;
+        /* max-width: 1000px; */
+    }
+
+    .goals-main-writing hr {
+        align-self: flex-start;
+        padding: 2px;
+        width: 120px;
+    }
+
+    .goals-main-writing p {
+        /* width: 90%; */
+    }
+
+    .goals-main-heading h1 {
+        font-size: 40px;
+    }
+
+    .goals-page-heading {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        /* flex: 1; */
+        /* align-self: center; */
+        /* justify-content: space-between; */
+        gap: 100px !important;
+    }
+
+    .goals-page-heading p {
+        /* font-size: 14px; */
+        text-align: left;
+        align-self: flex-start;
+        /* flex: 2; */
+        width: 100%;
+    }
+
+    .goals-page-heading button {
+        width: 100%;
+        max-width: 280px;
+        min-width: 200px;
+        align-self: center;
+    }
+
+
+    /* =====================================================
+       GOALS OVERVIEW
+       ===================================================== */
+
+    .goals-page-section {
+        padding: 24px;
+        border-radius: 16px;
+    }
+
+
+    /* =====================================================
+       GOAL CARD
+       ===================================================== */
+
+    .goal-item {
+        display: flex;
+        flex-direction: column;
+
+        column-gap: 30px;
+        gap: 20px;
+
+        padding: 20px;
+    }
+
+    .goal-item-heading {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .goal-item .progress-bar {
+        grid-column: 1 / -1;
+    }
+
+
+    /* =====================================================
+       ACCORDION
+       ===================================================== */
+
+    .subgoal-heading {
+        min-height: 65px;
+        padding: 0 20px;
+    }
+
+    .subgoals-section {
+        gap: 22px;
+        padding: 0 20px 25px;
+    }
+
+
+    /* =====================================================
+       MAIN GOAL PROGRESS
+       ===================================================== */
+
+    .subgoal-goal-section {
+        padding: 20px;
+    }
+
+    .goal-subgoal-item {
+        padding: 15px;
+    }
+
+    .goal-data h2 {
+        font-size: 24px;
+    }
+
+
+    /* =====================================================
+       FORMS
+       ===================================================== */
+
+    .subgoal-add-form {
+        padding: 17px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        /* display: grid;
+        grid-template-columns: repeat(2, 1fr); */
+    }
+
+    .subgoal-add-form [type="submit"] {
+        width: 40%;
+        max-width: 300px;
+    }
+
+
+    /* =====================================================
+       TRANSACTIONS
+       ===================================================== */
+
+    .goal-data.transaction {
+        align-items: center;
+        gap: 20px;
+    }
+
+    .transaction-goal-heading {
+        width: auto;
+    }
+
+    .subgoal-add-form input::placeholder {
+    color: #9ba39b;
+    font-size: 15px;
+}
+}
+
+@media screen and (min-width: 1250px) {
+    .workspace-container.goals h1 {
+        
+    }
+
+    .goals-page-heading {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 30px;
+        text-align: center;
+    }
+}
