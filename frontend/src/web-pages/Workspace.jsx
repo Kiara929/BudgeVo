@@ -5,11 +5,13 @@ import DashboardCard from "../components/Dashboard-Card";
 import Calendar from "../components/Calendar";
 import ProgressBar from "../components/Progress-Bar";
 import PopUpMenu from "../components/Pop-Up-Menu";
+import SideBar from "../components/SideBar";
 
 function Workspace() {
 
         const [userData, setUserData] = useState(null);
         const [showExpenseMenu, setShowExpenseMenu] = useState(false);
+        const [transactionData, setTransactionData] = useState([]);
 
     
     useEffect(() => {
@@ -37,6 +39,33 @@ function Workspace() {
 
     getUser();
 }, []);
+
+useEffect(() => {
+        const getTransactionData = async () => {
+            try {
+                const response = await fetch("http://localhost:8000/api/transactions", {
+                    method: "GET",
+                    credentials: "include",
+                    headers: {
+                        "Accept": "application/json",
+                    },
+                });
+
+                const data = await response.json();
+
+                console.log(data);
+
+                if (response.ok) {
+                    setTransactionData(data);
+                }
+            } catch (error) {
+                console.error("Error getting goals data:", error);
+            }
+        };
+
+        getTransactionData();
+    }, []);
+
 
 
 
@@ -100,12 +129,12 @@ function Workspace() {
         { id: 2, title: "Start a Business", targetAmount: 100000, savedAmount: 25000, percentage: 25 },
     ];
 
-    const expenseItems = [
-        { id: 1, description: "Groceries", category: "One Time", amount: 150.75, date: "2026-09-02" },
-        { id: 2, description: "Utilities", category: "Recurring", amount: 80.50, date: "2026-09-03" },
-        { id: 3, description: "Gym Membership", category: "Long term", amount: 45.00, date: "2026-09-05" },
-        { id: 4, description: "Car Insurance", category: "Short term", amount: 120.00, date: "2026-09-07" },
-    ];
+    // const expenseItems = [
+    //     { id: 1, description: "Groceries", category: "One Time", amount: 150.75, date: "2026-09-02" },
+    //     { id: 2, description: "Utilities", category: "Recurring", amount: 80.50, date: "2026-09-03" },
+    //     { id: 3, description: "Gym Membership", category: "Long term", amount: 45.00, date: "2026-09-05" },
+    //     { id: 4, description: "Car Insurance", category: "Short term", amount: 120.00, date: "2026-09-07" },
+    // ];
 
     const date = new Date();
 
@@ -138,95 +167,7 @@ function Workspace() {
 
     return (
         <div className={`workspace-container ${isMobile ? "is-mobile" : "is-desktop"}`}>
-            {isMobile ? (
-                <>
-                    <div className="workspace-banner-mobile">
-                        <div className="workspace-banner-logo">
-                            <img
-                                src="more.png"
-                                className="hamburger-icon"
-                                alt="Open Menu"
-                                onClick={() => setMenuOpen(true)}
-                            />
-
-                            {/* Mobile slide-in overlay menu */}
-                            <aside className={`workspace-menu ${menuOpen ? "open" : ""}`}>
-                                <div className="hamburger-icons">
-                                    <a href="/">
-                                        <img
-                                            src={`${import.meta.env.BASE_URL}BudgeVo-Logo.png`}
-                                            className="workspace-hamburger-icon"
-                                            alt="BudgeVo Logo"
-                                        />
-                                    </a>
-
-                                    <img
-                                        src={`${import.meta.env.BASE_URL}reject.png`}
-                                        className="exit-hamburger-menu-workspace"
-                                        alt="Close Menu"
-                                        onClick={() => setMenuOpen(false)}
-                                    />
-                                </div>
-
-                                <div className="workspace-profile">
-                                    <img src="woman.png" className="workspace-profile-icon" alt="" />
-                                    <h3>Hi, {userData?.name}</h3>
-                                </div>
-
-                                <hr className="hamburger-menu-divider" />
-
-                                <ul className="nav-links-mobile">
-                                    {links.map((link) => (
-                                        <li key={link.label}>
-                                            <img className="nav-links-icons" src={link.image} alt="" />
-                                            <Link to={link.href}>{link.label}</Link>
-                                        </li>
-                                    ))}
-                                </ul>
-
-                                <hr className="hamburger-menu-divider" />
-                            </aside>
-                        </div>
-
-                        <div className="workspace-banner-header">
-                            <input
-                                type="text"
-                                placeholder="Search transactions, goals..."
-                                className="workspace-search-bar"
-                            />
-                            <img src="notification.png" className="workspace-notification-icon" alt="Notifications" />
-                        </div>
-                    </div>
-
-                    {/* {pageContent} */}
-                </>
-            ) : (
-                <>
-                    {/* Desktop persistent sidebar */}
-                    <aside className="workspace-sidebar">
-                        <div className="workspace-banner-logo">
-                            <a href="/" className="workspace-logo-header">
-                                <img src="BudgeVo-Favicon.png" className="workspace-logo" alt="" />
-                                <h1>
-                                    Budge<span>Vo</span>
-                                </h1>
-                            </a>
-                        </div>
-
-                        <ul className="nav-links-mobile workspace-menu-container">
-                            {links.map((link) => (
-                                <li key={link.label}>
-                                    <img className="nav-links-icons" src={link.image} alt="" />
-                                    <Link to={link.href}>{link.label}</Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </aside>
-
-                    {/* Desktop main column: header bar + page content */}
-
-                </>
-            )}
+            <SideBar userData={userData} />
 
             <div className="workspace-main">
                 { }
@@ -241,7 +182,7 @@ function Workspace() {
                 
 
                 <div className="workspace-sections">
-                    {/* {!isMobile && (
+                    {!isMobile && (
                     <>
                         <div className="workspace-banner-header">
                             <input
@@ -253,10 +194,10 @@ function Workspace() {
                             <div className="workspace-profile">
                                 <img src="woman.png" className="workspace-profile-icon" alt="" />
                             </div>
-                            <h3>Hi, Kiara</h3>
+                            <h3>Hi, {userData?.name}</h3>
                         </div>
                     </>
-                )} */}
+                )}
                     
                     {/* <div className="workspace-banner-date">
                         <div className="workspace-month">
@@ -283,7 +224,7 @@ function Workspace() {
                                 <h2>Dashboard snapshot</h2>
                                 {/* <p>Income, spend, and goal trends live on the full dashboard.</p> */}
                             </div>
-                            <button>Open dashboard {"->"}</button>
+                            <button className="workspace-dashboard-button">Open dashboard <img src="right-arrow.png" className="workspace-right-arrow"/></button>
                         </div>
                         <div className="dashboard-cards-container">
                                 {dashboardCardData.map((cardData) => {
@@ -378,12 +319,12 @@ function Workspace() {
             </thead> */}
 
             <tbody>
-                {expenseItems.map((item) => (
-                    <tr key={item.id} className="workspace-expense-item">
-                        <td className="expense-item-description"><h3>{item.description}</h3></td>
-                        <td className="expense-item-category" style={{color: "green"}}>{item.category}</td>
+                {transactionData.map((transaction) => (
+                    <tr key={transaction.transaction_id} className="workspace-expense-item">
+                        <td className="expense-item-description"><h3>{transaction.category.category_name}</h3></td>
+                        <td className="expense-item-category" style={{color: "green"}}>{transaction.category.category_type}</td>
                         <td>
-                            {new Date(item.date).toLocaleDateString("en-US", {
+                            {new Date(transaction.created_at).toLocaleDateString("en-US", {
                                 month: "long",
                                 day: "numeric",
                                 year: "numeric"
@@ -392,7 +333,7 @@ function Workspace() {
                         {/* <td className="expense-item-empty"></td>
                         <td className="empty"></td> */}
 
-                        <td className="expense-item-value" style={{color: "red"}}>-${item.amount.toFixed(2)}</td>
+                        <td className="expense-item-value" style={{color: "red"}}>-${transaction.amount}</td>
                         <td className="expense-item-actions">
                             <img
                                 src="pencil-black.png"
@@ -413,20 +354,20 @@ function Workspace() {
             </tbody>
         </table>
     ) : (
-        expenseItems.map((item) => (
+        transactionData.map((transaction) => (
             <div
-                key={item.id}
+                key={transaction.transaction_id}
                 className="workspace-expense-item"
             >
                 <div className="expense-item-description">
-                    <h3>{item.description}</h3>
+                    <h3>{transaction.category.category_name}</h3>
 
                     <div className="expense-item-category">
-                        <p>{item.category}</p>
+                        <p>{transaction.category.category_type}</p>
                     </div>
 
                     <p>
-                        {new Date(item.date).toLocaleDateString("en-US", {
+                        {new Date(transaction.created_at).toLocaleDateString("en-US", {
                             month: "long",
                             day: "numeric",
                             year: "numeric"
@@ -435,7 +376,7 @@ function Workspace() {
                 </div>
 
                 <div className="expense-item-amount-icons">
-                    <h3>-${item.amount.toFixed(2)}</h3>
+                    <h3>-${transaction.amount}</h3>
 
                     <img
                         src="pencil-black.png"
