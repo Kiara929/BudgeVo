@@ -296,11 +296,20 @@
 
 }
 
-.workspace-month-arrows {
+.workspace-month-arrows, .workspace-right-arrow {
     width: 20px;
     height: 20px;
     cursor: pointer;
+    align-self: center;
 }
+
+.workspace-dashboard-button {
+    display: flex;
+    flex-direction: row;
+    gap: 10px
+}
+
+
 
 .workspace-today-date p {
     margin: 0;
