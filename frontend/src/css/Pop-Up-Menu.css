@@ -1,0 +1,188 @@
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+
+    z-index: 9998;
+}
+
+.popup-menu {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: white;
+    z-index: 9999;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+    padding: 30px;
+    border-radius: 12px;
+    width: 70vw;
+}
+
+
+
+.popup-menu-category-inputs.popup-menu-main {
+    width: 100%;
+    align-self: center;
+    justify-self: center;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.popup-menu-category-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+}
+
+select {
+    all: initial;
+    /* width: 100%; */
+    max-width: 500px;
+    min-width: 100px;
+
+    height: 35px;
+
+    padding-left: 10px;
+
+    border: none;
+
+    background-color: rgb(225, 225, 225);
+
+    border-radius: 5px;
+
+    box-sizing: border-box;
+    color: gray;
+
+    display: flex;
+    align-items: center;       /* vertical centering */
+    justify-content: center; /* keep horizontal left */
+
+    /* flex: 1; */
+}
+
+
+
+.popup-menu-content form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.popup-menu-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.popup-menu .exit-hamburger-menu {
+    top: 5%;
+    right: 1%;
+    position: absolute;
+    margin: 0 0 30px 30px;
+}
+
+
+/* ----------------------------- */
+/* Normal inputs                 */
+/* ----------------------------- */
+
+.popup-menu-content form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.popup-menu-inputs {
+    width: 80%;
+    box-sizing: border-box;
+}
+
+
+/* NORMAL INPUT */
+
+.popup-menu-inputs > input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* CATEGORY FIELD */
+
+.popup-menu-inputs > .popup-menu-category-inputs {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+.popup-menu-category-inputs select {
+    width: 100%;
+}
+
+.add-expense-button {
+    width: 50%;
+}
+
+
+
+
+/* SELECT */
+
+/* .popup-menu-inputs > .popup-menu-category-inputs > select {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: auto;
+    box-sizing: border-box;
+} */
+
+
+/* BUTTON */
+/* 
+.popup-menu-inputs > .popup-menu-category-inputs > button {
+    flex: 0 0 auto;
+    width: auto;
+    box-sizing: border-box;
+} */
+
+@media screen and (min-width:480px) {
+    .popup-menu-category-inputs.popup-menu-main {
+        flex-direction: row;
+    }
+
+    .popup-menu-category-inputs.popup-menu-main select {
+    flex: 1;
+}
+}
+
+@media screen and (min-width: 768px) {
+    select {
+        height: 50px;
+        font-size: 18px;
+    }
+
+    .popup-menu-category-inputs {
+        flex-direction: row;
+    }
+}
