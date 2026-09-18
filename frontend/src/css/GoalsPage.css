@@ -2,17 +2,7 @@
    GOALS PAGE
    ========================================================= */
 
-.goals {
-    /* background: #f5f7f4; */
-}
 
-.goals .workspace-main {
-    /* background: #f5f7f4; */
-}
-
-.goals .workspace-sections {
-    /* max-width: 1200px; */
-}
 
 
 /* =========================================================
@@ -591,9 +581,6 @@
         width: 120px;
     }
 
-    .goals-main-writing p {
-        /* width: 90%; */
-    }
 
     .goals-main-heading h1 {
         font-size: 40px;
@@ -732,9 +719,7 @@
 }
 
 @media screen and (min-width: 1250px) {
-    .workspace-container.goals h1 {
-        
-    }
+    
 
     .goals-page-heading {
         flex-direction: row;
