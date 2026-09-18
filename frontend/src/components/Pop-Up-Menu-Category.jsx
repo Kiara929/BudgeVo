@@ -82,13 +82,15 @@ function PopUpMenuCategory({ type, onClose }) {
         <div className="popup-overlay">
 
             <div className="popup-menu">
+                                    <img src="reject.png" className="exit-hamburger-menu" onClick={onClose} />
+
 
                 <div className="popup-menu-content">
 
                     <h2>Add {type}</h2>
 
-                    <form onSubmit={handleSubmit}>
-
+                    <form onSubmit={handleSubmit} className="popup-menu-category">
+                    <div className="popup-menu-category-inputs">
                         <input
                             type="text"
                             placeholder="Category Name"
@@ -117,7 +119,13 @@ function PopUpMenuCategory({ type, onClose }) {
                             <option value="Income">
                                 Income
                             </option>
+
+                            <option value="Saving">
+                                Saving
+                            </option>
                         </select>
+                    </div>
+                        
 
                         <button type="submit">
                             Create Category
@@ -125,12 +133,12 @@ function PopUpMenuCategory({ type, onClose }) {
 
                     </form>
 
-                    <button
+                    {/* <button
                         className="close-button"
                         onClick={onClose}
                     >
                         Close
-                    </button>
+                    </button> */}
 
                 </div>
 
