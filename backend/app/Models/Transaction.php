@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 #[Fillable([
     'category_id',
     'goal_id',
+    'sub_goal_id',
+    'user_id',
     'type',
     'transaction_date',
     'amount',
@@ -19,6 +21,8 @@ class Transaction extends Model
     protected $table = 'transactions';
 
     protected $primaryKey = 'transaction_id';
+
+    public $timestamps = false;
 
     // Relationships
 
@@ -42,6 +46,15 @@ class Transaction extends Model
             Goal::class,
             'goal_id',
             'goal_id'
+        );
+    }
+
+    public function subGoal()
+    {
+        return $this->belongsTo(
+            SubGoal::class,
+            'sub_goal_id',
+            'subgoal_id'
         );
     }
 }
